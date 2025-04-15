@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:opsz,wght@10..72,100..900&family=Dancing+Script:wght@400..700&display=swap");
+
+.header {
+  background-color: rgb(10, 10, 10);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 25px;
+}
+
+.menu {
+  display: none;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 60%;
+  padding: 10px 20px;
+  ul {
+    display: flex;
+  }
+}
+
+.list {
+  display: flex;
+}
+
+.navbar_link {
+  color: #ff7d00;
+  text-decoration: none;
+  font-size: 18px;
+  margin: 0 10px;
+}
+
+.title {
+  font-family: "Big Shoulders Stencil";
+  font-size: 30px;
+  color: #ff7d00;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.button {
+  background-color: #ff7d00;
+  color: snow;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+@media (max-width: 1240px) {
+  .navbar {
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: absolute;
+    width: 45vw;
+    height: 65vh;
+    gap: 20px;
+    left: 0;
+    top: 0;
+    background-color: rgb(10, 10, 10);
+  }
+
+  .navbar ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .menu {
+    display: block;
+    cursor: pointer;
+  }
+}
