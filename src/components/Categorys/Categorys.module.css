@@ -53,10 +53,12 @@
   font-size: 25px;
   color: #ff7d00; /* Texto naranja que combina con el diseño */
   margin: 10px 0 5px;
+  text-align: center;
 }
 
 .categoryItem p {
   font-size: 18px;
-  color: #ccc; /* Texto gris claro */
+  color: snow; /* Texto gris claro */
   line-height: 1.5;
+  text-align: center;
 }
