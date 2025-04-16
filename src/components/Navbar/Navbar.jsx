@@ -2,6 +2,7 @@ import { List } from "../List/List";
 import { useState } from "react";
 import styledNavbar from "../Navbar/Navbar.module.css";
 import { ShoppingCart, User, Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const Navbar = () => {
     const [isCartOpen, setIsCartOpen] = useState(false); // Estado para el carrito
@@ -21,16 +22,16 @@ export const Navbar = () => {
             <nav className={`${styledNavbar.navbar}`}>
                 <List className={`${styledNavbar.list}`}>
                     <li className={`${styledNavbar.navbar_link}`}>
-                        <a href="">Inicio</a>
+                        <Link to={"/"}>Inicio</Link>
                     </li>
                     <li className={`${styledNavbar.navbar_link}`}>
-                        <a href="">Nosotros</a>
+                        <Link to={"/nosotros"}>Nosotros</Link>
                     </li>
                     <li className={`${styledNavbar.navbar_link}`}>
                         <a href="">Productos</a>
                     </li>
                     <li className={`${styledNavbar.navbar_link}`}>
-                        <a href="">Contacto</a>
+                        <Link to={'/contacto'}>Contacto</Link>
                     </li>
                 </List>
                 <div className="flex justify-between items-center gap-5">
