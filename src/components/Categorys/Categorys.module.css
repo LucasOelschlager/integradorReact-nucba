@@ -20,7 +20,7 @@
 
 .categoryItem {
   cursor: pointer;
-  flex: 1 1 calc(25% - 20px); /* Ocupa el 25% del ancho menos el espacio del gap */
+  flex: 0 1 calc(100% / 5 - 20px); /* Ajusta para que entren tres tarjetas por fila */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -50,13 +50,13 @@
 }
 
 .categoryItem h4 {
-  font-size: 20px;
+  font-size: 25px;
   color: #ff7d00; /* Texto naranja que combina con el diseño */
   margin: 10px 0 5px;
 }
 
 .categoryItem p {
-  font-size: 14px;
+  font-size: 18px;
   color: #ccc; /* Texto gris claro */
   line-height: 1.5;
 }

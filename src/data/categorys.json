@@ -1,24 +1,30 @@
 [
     {
-        "id": 1,
+    "id": 1,
+    "name": "All",
+    "description": "Todos Nuestros Productos",
+    "image": "./src/data/img/allCategory.jpg"
+    },
+    {
+        "id": 2,
         "name": "Gibson",
         "description": "Simplemente Icónica.",
         "image": "./src/data/img/gibsonCategory.jpg"
     },
     {
-        "id": 2,
+        "id": 3,
         "name": "Fender",
         "description": "Sonido y Estilo.",
         "image": "./src/data/img/fenderCategory.webp"
     },
     {
-        "id": 3,
+        "id": 4,
         "name": "PRS",
         "description": "Make You Look Better.",
         "image": "./src/data/img/prsCategory.jpg"
     },
     {
-        "id": 4,
+        "id": 5,
         "name": "Gretsch",
         "description": "El Gran Sonido Grestch.",
         "image": "./src/data/img/grestchCategory.jpg"
