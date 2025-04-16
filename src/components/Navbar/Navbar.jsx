@@ -1,34 +1,127 @@
-import { List } from "../List/List"
-import { createContext, useState } from "react"
-import styledNavbar from '../Navbar/Navbar.module.css'
-import { ShoppingCart, User, Menu, X, Car } from 'lucide-react'
-import { CartComponent } from "../cartComponent/cartComponent"
-import { useContext } from "react"
-
+import { List } from "../List/List";
+import { useState } from "react";
+import styledNavbar from "../Navbar/Navbar.module.css";
+import { ShoppingCart, User, Menu, X } from "lucide-react";
 
 export const Navbar = () => {
-    const [isCartOpen, setIsCartOpen] = useState(false)
-    const [isMenuOpen, setIsMenuOpen] = useState(false)
-    const navContext = createContext()
+    const [isCartOpen, setIsCartOpen] = useState(false); // Estado para el carrito
+    const [isMenuOpen, setIsMenuOpen] = useState(false); // Estado para el menú
 
     return (
-        <>
-            <navContext.Provider >
-                <header className={`${styledNavbar.header}`}>
-                    <div className="flex items-center w-[40%] z-20">
-                        <img src="./src/assets/navbar/logoNavbar.png" alt="" className="size-25" />
-                        <h1 className={`${styledNavbar.title}`}>Rosario Guitar Store</h1>
-                    </div>
-                    <nav className={`${styledNavbar.navbar}`}>
-                        <List className={`${styledNavbar.list}`}>
-                            <li className={`${styledNavbar.navbar_link}`}><a href="">Inicio</a></li>
-                            <li className={`${styledNavbar.navbar_link}`}><a href="">Nosotros</a></li>
-                            <li className={`${styledNavbar.navbar_link}`}><a href="">Productos</a></li>
-                            <li className={`${styledNavbar.navbar_link}`}><a href="">Contacto</a></li>
-                        </List>
-                    </nav>
-                </header >
-            </navContext.Provider>
-        </>
-    )
-}
+        <header className={`${styledNavbar.header}`}>
+            <div className="flex items-center w-[40%]">
+                <img
+                    src="./src/assets/navbar/logoNavbar.png"
+                    alt=""
+                    className="size-25"
+                />
+                <h1 className={`${styledNavbar.title}`}>Rosario Guitar Store</h1>
+            </div>
+
+            <nav className={`${styledNavbar.navbar}`}>
+                <List className={`${styledNavbar.list}`}>
+                    <li className={`${styledNavbar.navbar_link}`}>
+                        <a href="">Inicio</a>
+                    </li>
+                    <li className={`${styledNavbar.navbar_link}`}>
+                        <a href="">Nosotros</a>
+                    </li>
+                    <li className={`${styledNavbar.navbar_link}`}>
+                        <a href="">Productos</a>
+                    </li>
+                    <li className={`${styledNavbar.navbar_link}`}>
+                        <a href="">Contacto</a>
+                    </li>
+                </List>
+                <div className="flex justify-between items-center gap-5">
+                    <button type="button">
+                        {/* BOTON PARA ABRIR EL CARRITO*/}
+                        <ShoppingCart
+                            color="#FF7D00"
+                            size={30}
+                            className="cursor-pointer"
+
+                            onClick={() => setIsCartOpen(!isCartOpen)}
+                        />
+                    </button>
+                    <button type="button">
+                        <User color="#FF7D00" size={30} className="cursor-pointer" />
+                    </button>
+                </div>
+            </nav>
+
+            {/* Menú Responsive */}
+            <nav
+                className={
+                    isMenuOpen
+                        ? `${styledNavbar.navbarResAct}`
+                        : `${styledNavbar.navbarRes}`
+                }
+            >
+                <List className="flex">
+                    <li className={`${styledNavbar.navbar_link}`}>
+                        <a href="">Inicio</a>
+                    </li>
+                    <li className={`${styledNavbar.navbar_link}`}>
+                        <a href="">Nosotros</a>
+                    </li>
+                    <li className={`${styledNavbar.navbar_link}`}>
+                        <a href="">Productos</a>
+                    </li>
+                    <li className={`${styledNavbar.navbar_link}`}>
+                        <a href="">Contacto</a>
+                    </li>
+                </List>
+                <div className="flex justify-between items-center gap-5">
+                    <button type="button">
+                        <ShoppingCart
+                            color="#FF7D00"
+                            size={30}
+                            className="cursor-pointer"
+                            onClick={() => {
+                                setIsCartOpen(!isCartOpen);
+                                setIsMenuOpen(!isMenuOpen);
+                            }}
+                        />
+                    </button>
+                    <button type="button">
+                        <User color="#FF7D00" size={30} className="cursor-pointer" />
+                    </button>
+                </div>
+            </nav>
+
+            {/* Botón para abrir/cerrar el menú */}
+            <Menu
+                className={`${styledNavbar.menu}`}
+                color="#FF7D00"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+            />
+
+            {/* Carrito */}
+            <div
+                className={
+                    isCartOpen == true
+                        ? `${styledNavbar.cartActive}`
+                        : `${styledNavbar.cart} `
+                }
+            >
+                <div className="flex gap-4 cursor-pointer">
+                    {/*BOTON PARA CERRAR EL CARRITO */}
+                    <X
+                        color="#FF7D00"
+                        className="cursor-pointer"
+                        size={30}
+                        onClick={() => setIsCartOpen(!isCartOpen)}
+                    />
+                    <h2 className="text-2xl text-[#FF7D00]">Carrito...</h2>
+                </div>
+                <List></List>
+                <div className="absolute bottom-[10px] flex items-center justify-around w-[100%] right-0">
+                    <h4 className="text-2xl text-[#FF7D00]">Total:</h4>
+                    <button className={`${styledNavbar.buttonCart}`}>Comprar</button>
+                </div>
+            </div>
+        </header>
+
+    );
+};

@@ -13,6 +13,10 @@
   display: none;
 }
 
+.navbarRes {
+  display: none;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -22,10 +26,6 @@
   ul {
     display: flex;
   }
-}
-
-.list {
-  display: flex;
 }
 
 .navbar_link {
@@ -52,24 +52,95 @@
   cursor: pointer;
   border-radius: 5px;
 }
+.cart {
+  display: block;
+  width: 30%;
+  background-color: #1a1a1a;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 20px;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+  border-radius: 10px 0 0 10px;
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
 
+.cartActive {
+  width: 30%;
+  background-color: #1a1a1a; /* Color de fondo más suave */
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+  border-radius: 10px 0 0 10px;
+  transform: translateX(0);
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.cart h2 {
+  color: #ff7d00; /* Color del texto */
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.buttonCart {
+  background-color: #ff7d00;
+  color: white;
+  border: none;
+  padding: 5px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.buttonCart:hover {
+  background-color: #e06b00;
+  transform: scale(1.05);
+}
 @media (max-width: 1240px) {
   .navbar {
     display: none;
-    flex-direction: column;
-    justify-content: space-evenly;
-    position: absolute;
-    width: 45vw;
-    height: 65vh;
-    gap: 20px;
-    left: 0;
-    top: 0;
-    background-color: rgb(10, 10, 10);
   }
 
-  .navbar ul {
+  .navbarRes {
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    top: 100px;
+    width: 300px;
+    background-color: rgb(10, 10, 10);
+    height: 55vh;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .navbarResAct {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    top: 100px;
+    width: 300px;
+    background-color: rgb(10, 10, 10);
+    height: 55vh;
+    transform: translateX(0);
+    transition: transform 0.3s ease-in-out;
   }
 
   .menu {

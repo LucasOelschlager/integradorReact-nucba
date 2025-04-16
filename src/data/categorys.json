@@ -1,33 +1,26 @@
-{
-    "categorys": [
-        {
+[
+    {
         "id": 1,
         "name": "Gibson",
         "description": "Simplemente Icónica.",
         "image": "./src/data/img/gibsonCategory.jpg"
-        },
-        {
+    },
+    {
         "id": 2,
         "name": "Fender",
         "description": "Sonido y Estilo.",
         "image": "./src/data/img/fenderCategory.webp"
-        },
-        {
-        },
-        {
+    },
+    {
         "id": 3,
         "name": "PRS",
         "description": "Make You Look Better.",
         "image": "./src/data/img/prsCategory.jpg"
-        },
-        {
-        },
-        {
+    },
+    {
         "id": 4,
         "name": "Gretsch",
         "description": "El Gran Sonido Grestch.",
-        "image": "./src/data/img/gretschCategory.jpg"
-        }
-    ]
-}
-
+        "image": "./src/data/img/grestchCategory.jpg"
+    }
+]
