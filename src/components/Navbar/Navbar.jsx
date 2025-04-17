@@ -9,8 +9,9 @@ import { useContext } from "react";
 export const Navbar = () => {
     const [isCartOpen, setIsCartOpen] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+    const [isOptionsMenuOpen, setIsOptionsMenuOpen] = useState(false)
     const { isLoggedIn } = useContext(UserContext)
+    const { setIsLoggedIn } = useContext(UserContext)
 
     return (
         <header className={`${styledNavbar.header}`}>
@@ -54,9 +55,19 @@ export const Navbar = () => {
                                 Inicia Sesión
                             </Link>
                         ) : (
-                            <User color="#FF7D00" size={30} className="cursor-pointer" />
+                            <User color="#FF7D00" size={30} className="cursor-pointer" onClick={() => setIsOptionsMenuOpen(!isOptionsMenuOpen)} />
                         )}
                     </button>
+                </div>
+                <div className={isOptionsMenuOpen ? `${styledNavbar.optionsMenuAct}` : `${styledNavbar.optionsMenu}`}>
+                    <List query={`${styledNavbar.listMenu}`}>
+                        <li>Perfil</li>
+                        <li>Configuración</li>
+                        <li onClick={() => {
+                            setIsLoggedIn(false)
+                            setIsOptionsMenuOpen(!isOptionsMenuOpen)
+                        }}>Cerrar Sesión</li>
+                    </List>
                 </div>
             </nav>
 

@@ -17,6 +17,63 @@
   display: none;
 }
 
+.optionsMenu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  transform: translateX(100%);
+  border-radius: 0 0 0 10px;
+  right: 0;
+  top: 100px;
+  height: 250px;
+  width: 200px;
+  padding: 20px 20px;
+  background-color: #0a0a0a;
+  transition: all 0.3s ease-in-out;
+
+  .listMenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.optionsMenuAct {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  transform: translateX(0);
+  border-radius: 0 0 0 10px;
+  right: 0;
+  top: 100px;
+  height: 250px;
+  width: 200px;
+  padding: 20px 20px;
+  background-color: #0a0a0a;
+
+  .listMenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    li {
+      font-size: 18px;
+      cursor: pointer;
+    }
+    li:hover {
+      color: #ff7d00;
+      transition: 0.5s;
+    }
+  }
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -76,7 +133,7 @@
   border-radius: 5px;
 }
 .cart {
-  display: none;
+  display: flex;
   width: 30%;
   background-color: #1a1a1a;
   height: 100%;
