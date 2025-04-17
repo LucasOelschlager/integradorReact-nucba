@@ -18,7 +18,7 @@
 }
 
 .optionsMenu {
-  display: flex;
+  display: block;
   justify-content: space-between;
   align-items: center;
   position: absolute;
@@ -30,7 +30,8 @@
   width: 200px;
   padding: 20px 20px;
   background-color: #0a0a0a;
-  transition: all 0.3s ease-in-out;
+  transition: 0.3s all ease-in-out;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
 
   .listMenu {
     display: flex;
@@ -55,22 +56,24 @@
   width: 200px;
   padding: 20px 20px;
   background-color: #0a0a0a;
+  transition: 0.3s all ease-in-out;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+}
 
-  .listMenu {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    li {
-      font-size: 18px;
-      cursor: pointer;
-    }
-    li:hover {
-      color: #ff7d00;
-      transition: 0.5s;
-    }
+.listMenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  li {
+    font-size: 18px;
+    cursor: pointer;
+  }
+  li:hover {
+    color: #ff7d00;
+    transition: 0.5s;
   }
 }
 

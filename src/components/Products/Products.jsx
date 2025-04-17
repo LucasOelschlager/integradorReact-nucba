@@ -1,8 +1,9 @@
-export const Products () => {
+export const Products = () => {
     return (
-        <>
 
+        <div>
 
-        </>
+        </div>
+
     )
 }
