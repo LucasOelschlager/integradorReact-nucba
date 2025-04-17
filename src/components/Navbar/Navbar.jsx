@@ -3,10 +3,14 @@ import { useState } from "react";
 import styledNavbar from "../Navbar/Navbar.module.css";
 import { ShoppingCart, User, Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
+import { UserContext } from "../../context/userContext";
+import { useContext } from "react";
 
 export const Navbar = () => {
-    const [isCartOpen, setIsCartOpen] = useState(false); // Estado para el carrito
-    const [isMenuOpen, setIsMenuOpen] = useState(false); // Estado para el menú
+    const [isCartOpen, setIsCartOpen] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const { isLoggedIn } = useContext(UserContext)
 
     return (
         <header className={`${styledNavbar.header}`}>
@@ -41,12 +45,17 @@ export const Navbar = () => {
                             color="#FF7D00"
                             size={30}
                             className="cursor-pointer"
-
                             onClick={() => setIsCartOpen(!isCartOpen)}
                         />
                     </button>
                     <button type="button">
-                        <User color="#FF7D00" size={30} className="cursor-pointer" />
+                        {!isLoggedIn ? (
+                            <Link to="/login" className="text-[20px] text-[#FF7D00]">
+                                Inicia Sesión
+                            </Link>
+                        ) : (
+                            <User color="#FF7D00" size={30} className="cursor-pointer" />
+                        )}
                     </button>
                 </div>
             </nav>
@@ -86,7 +95,7 @@ export const Navbar = () => {
                         />
                     </button>
                     <button type="button">
-                        <User color="#FF7D00" size={30} className="cursor-pointer" />
+
                     </button>
                 </div>
             </nav>
