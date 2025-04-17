@@ -50,7 +50,7 @@ export const Navbar = () => {
                     </button>
                     <button type="button">
                         {!isLoggedIn ? (
-                            <Link to="/login" className="text-[20px] text-[#FF7D00]">
+                            <Link to="/login" className={`${styledNavbar.logginButton}`}>
                                 Inicia Sesión
                             </Link>
                         ) : (
@@ -131,7 +131,7 @@ export const Navbar = () => {
                     <button className={`${styledNavbar.buttonCart}`}>Comprar</button>
                 </div>
             </div>
-        </header>
+        </header >
 
     );
 };
